@@ -28,7 +28,7 @@ export default function MovieDetails() {
       <p>{movie.overview}</p>
 
       <div style={{ marginTop: "20px" }}>
-        <Link to="cast">Actors</Link> | <Link to="reviews">reviews</Link>
+        <Link to="cast">Actors</Link>
       </div>
 
       <Outlet />

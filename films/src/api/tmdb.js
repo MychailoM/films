@@ -15,19 +15,20 @@ export const getTrending = async () => {
 }
 
 export const searchMovies = async (query) => {
-    const {data} = await tmdb.get("/search/movie", {params:{query}});
-    return data.results;
+    if (!query || query.trim() === '') {
+        const { data } = await tmdb.get("/trending/movie/day");
+        return data.results;
+    } else {
+        const { data } = await tmdb.get("/search/movie", { params: { query } });
+        return data.results;
+    }
 }
+
 
 export const getMovieDetails = async (id) => {
     const {data} = await tmdb.get(`movie/${id}`);
     return data
 }
-
-export const getReviews = async (id) => {
-  const { data } = await tmdb.get(`movie/${id}/reviews`);
-  return data.results;
-}; 
 
 export const getCast = async (id) => {
     const {data} = await tmdb.get(`movie/${id}/credits`);

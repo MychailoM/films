@@ -15,6 +15,7 @@ export default function Movies (){
       <>  
         <input type="text" value={keyWord} onChange={onChange} placeholder="Enter films name" /> 
         <MovieList keyWord={keyWord}/>
+        
       </>  
     )
 }

@@ -1,8 +1,5 @@
 // Components
-import Header from './components/Header';
 import Layout from './components/Layout';
-import Loader from './components/Loader';
-import MovieList from './components/MovieList'
 
 // Pages
 import About from './pages/About';
@@ -11,7 +8,6 @@ import Home from './pages/Home';
 import MovieDetails from './pages/MovieDetails';
 import Movies from './pages/Movies';
 import NotFound from './pages/NotFound';
-import Reviews from './pages/Reviews';
 
 import {Routes, Route, Navigate} from 'react-router-dom';
 
@@ -26,7 +22,6 @@ function App() {
         <Route path='movies' element={<Movies/>}/>
         <Route path='movies/:movieId' element={<MovieDetails/>}>
           <Route path='cast' element={<Cast/>}/>
-          <Route path='reviews' element={<Reviews/>}/>
         </Route>
         <Route path='about' element={<About/>}/>
         <Route path='*' element={<NotFound/>}/>

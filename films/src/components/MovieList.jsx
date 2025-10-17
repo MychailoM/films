@@ -5,15 +5,19 @@ import { useEffect, useState } from "react";
 
 export default function MovieList ({keyWord}){
     const [movies, setMovies] = useState([]);
+
     
 
     useEffect(() => {
-        searchMovies(keyWord).then(setMovies)
+        
+        searchMovies(keyWord).then(setMovies)        
     }, [keyWord])
 
     if(movies.length === 0){
         return<p>Array is not defiend</p>
     } return (
+        <>
+        
         <ul>
             {movies.map((movie) => (
                 <li key={movie.id}>
@@ -23,5 +27,6 @@ export default function MovieList ({keyWord}){
                 </li>
             ))}
         </ul>
+        </>
     )
 }

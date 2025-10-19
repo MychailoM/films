@@ -1,0 +1,35 @@
+:root {
+  --bg-gradient: radial-gradient(circle at top, #0f0f1f, #000);
+  --text-color: #e0e0e0;
+  --accent: #ff914d;
+  --accent-light: #ffa76b;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.15);
+}
+
+.header {
+  padding: 20px 0 12px 0;
+  margin-bottom: 20px;
+  background: var(--bg-gradient);
+  box-shadow: 0 0 40px rgba(255, 145, 77, 0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-light);
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(255, 145, 77, 0.5);
+  padding: 0 10px 8px 10px;
+}
+
+.link.active{
+    border-bottom: 2px solid var(--accent-light);
+}

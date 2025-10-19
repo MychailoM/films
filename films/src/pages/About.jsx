@@ -1,9 +1,10 @@
 import "../styles/About.css"
+import "../App.css";
 
 export default function About(){
     return(
-               <div className="about-page-container">
-      {/* Заголовок */}
+    <div className="about-page-container container">
+
       <header className="about-header">
         <h1 className="about-title">🎬 Ласкаво просимо до CineFinder!</h1>
         <p className="about-subtitle">
@@ -12,7 +13,6 @@ export default function About(){
         </p>
       </header>
 
-      {/* Про сайт */}
       <section className="about-section">
         <h2 className="about-section-title">Що робить наш сайт:</h2>
         <ul className="about-features-list">
@@ -24,7 +24,6 @@ export default function About(){
         </ul>
       </section>
 
-      {/* Додаткова інформація */}
       <section className="about-additional">
         <h2 className="about-section-title">Навіщо це тобі:</h2>
         <p className="about-text">
@@ -34,7 +33,6 @@ export default function About(){
         </p>
       </section>
 
-      {/* Заклик до дії */}
       <section className="about-cta">
         <h2 className="about-cta-title">Готовий почати?</h2>
         <p className="about-cta-subtitle">Введи назву фільму у пошуку та відкрий для себе кіномагію!</p>

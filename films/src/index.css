@@ -5,10 +5,36 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5ebe0;
+    background: radial-gradient(circle at top left, #1e1f29, #15151e);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+
+
+  .container{
+  width: 360px;
+  margin: 0 auto;
+  padding: 0 15px;
+  }
+
+
+@media screen and (min-width: 720px) {
+  .container{
+  width: 720px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+}
+
+@media screen and (min-width: 1200px) {
+  .container{
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 }

@@ -1,0 +1,60 @@
+:root {
+  --bg-gradient: radial-gradient(circle at top, #0f0f1f, #000);
+  --text-color: #e0e0e0;
+  --accent: #ff914d;
+  --accent-light: #ffa76b;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.15);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 30px;
+  width: 100%;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 40px rgba(255, 145, 77, 0.1);
+}
+
+.img {
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 12px 20px 18px rgb(0, 0, 0);
+}
+
+.title{
+    color: var(--accent);
+}
+
+.link{
+    color: var(--accent);
+       
+}
+
+.link:hover{
+    border-bottom: 2px solid var(--accent); 
+}
+
+@media screen and (min-width: 720px) {
+    .item {        
+        width: 284px;
+    }
+}

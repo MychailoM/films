@@ -1,6 +1,7 @@
 import { useParams, Link, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getMovieDetails } from "../api/tmdb";
+import "../App.css";
 
 export default function MovieDetails() {
   const { movieId } = useParams();
@@ -15,7 +16,7 @@ export default function MovieDetails() {
   if (!movie) {
     return <p>Loading...</p>
   } return (
-    <div>
+    <div className="container">
       {movie.poster_path && (
         <img
           src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}

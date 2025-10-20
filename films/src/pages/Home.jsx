@@ -1,6 +1,6 @@
 import { getTrending } from "../api/tmdb";
 import { useState, useEffect } from "react";
-import "../styles/Home.css"
+import "../styles/Home.css";
 import "../App.css";
 
 export default function Home() {
@@ -8,31 +8,30 @@ export default function Home() {
 
   useEffect(() => {
     getTrending().then(setTrending);
-  })
+  }, []);
 
-  if(trending.length === 0){
-    return<p>Array is not defiend</p>
-  } return (
+  if (trending.length === 0) {
+    return <p>Loading trending movies...</p>;
+  }
+
+  return (
     <div className="container home-page-container">
-  <ul className="list">
-    {trending.map((trend) => (
-      <li className="item" key={trend.id}>
-        <img
-          className="img"
-          src={`https://image.tmdb.org/t/p/w200${trend.poster_path}`}
-          alt={trend.title}
-          loading="lazy"
-        />
-        <div className="item-content">
-          <h2 className="title">{trend.title}</h2>
-          <p className="desc">{trend.overview}</p>
-        </div>
-      </li>
-    ))}
-  </ul>
-</div>
-
-  )
-  
+      <ul className="list">
+        {trending.map((trend) => (
+          <li className="item" key={trend.id}>
+            <img
+              className="img"
+              src={`https://image.tmdb.org/t/p/w200${trend.poster_path}`}
+              alt={trend.title || trend.name}
+              loading="lazy"
+            />
+            <div className="item-content">
+              <h3 className="title">{trend.title || trend.name}</h3>
+              <p className="desc">{trend.overview}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
-

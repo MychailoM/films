@@ -1,0 +1,71 @@
+:root {
+  --bg-gradient: radial-gradient(circle at top, #0f0f1f, #000);
+  --text-color: #e0e0e0;
+  --accent: #ff914d;
+  --accent-light: #ffa76b;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.15);
+}
+
+.list {
+  width: 90vw;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  gap: 25px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  color: var(--text-color);
+  flex: 1 1 250px;
+  max-width: 300px;
+  padding: 20px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(255, 145, 77, 0.25);
+}
+
+.img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.title {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin: 10px 0 8px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .list {
+    gap: 20px;
+  }
+
+  .card {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex: 1 1 90%;
+    max-width: 90%;
+  }
+}

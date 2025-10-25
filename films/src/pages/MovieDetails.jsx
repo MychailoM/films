@@ -1,4 +1,4 @@
-import { useParams, Link, Outlet } from "react-router-dom";
+import { useParams, Link, Outlet, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getMovieDetails } from "../api/tmdb";
 import "../App.css";
@@ -7,6 +7,8 @@ import "../styles/MovieDetails.css";
 export default function MovieDetails() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     getMovieDetails(movieId)
@@ -18,6 +20,17 @@ export default function MovieDetails() {
     return <p className="loading-text">Loading...</p>;
   }
 
+  const handleClick = () => {
+    setIsOpen((prev) => {
+      const newState = !prev;
+      if (newState) {
+        navigate("cast");
+      } else {
+        navigate(`/movies/${movieId}`); 
+      }
+      return newState;
+    });
+  };
   return (
     <div className="movie-details-container">
       <div className="movie-details-content">
@@ -46,9 +59,13 @@ export default function MovieDetails() {
       <p className="movie-overview">{movie.overview}</p>
 
       <div className="movie-links">
-        <Link to="cast" className="movie-link">
+        {/* <Link to="cast" className="movie-link">
           Actors
-        </Link>
+        </Link> */}
+
+        <button className="movie-link" onClick={handleClick}>
+          Actors
+        </button>
       </div>
 
       <div className="movie-outlet">
